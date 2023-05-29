@@ -1,20 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Escape Room</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
-  <div id="game-container">
-    <img id="background-image" src="Images/RoomTemp.jpg" alt="Background">
-    <img id="key-image" src="Images/chave.jpg" alt="Key">
-    <img id="door-image" src="Images/porta.jpg" alt="Door">
-    <div id="inventory"></div>
-    <div id="message-container">
-        <p id="message-text"></p>
+  <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="circle">
+      <div class="inner-circle">
+        <div class="inside-circle"></div>
+      </div>
+      <img src="./Images/compass.svg" alt="" class="img-fluid image1">
+      <img src="./Images/pyramids.svg" alt="" class="img-fluid image2">
+      <img src="./Images/tank.svg" alt="" class="img-fluid image3">
+    </div>
+  </div>
+
+  <!-- Bootstrap navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-bottom">
+    <div class="container d-flex justify-content-center">
+      <!-- Navbar toggler button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar collapse content -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav fs-2">
+          <!-- Rules -->
+          <li class="nav-item">
+            <a class="nav-link" href="#rules">Rules</a>
+          </li>
+
+          <!-- Leaderboard -->
+          <li class="nav-item">
+            <a class="nav-link" href="#leaderboard">Leaderboard</a>
+          </li>
+
+          <!-- Info -->
+          <li class="nav-item">
+            <a class="nav-link" href="#info">Info</a>
+          </li>
+        </ul>
       </div>
     </div>
-    
-    <script src="script.js"></script>
-  </body>
-  </html>
+  </nav>
+
+  <!-- Bootstrap and JavaScript dependencies -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
