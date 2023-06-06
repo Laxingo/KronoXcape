@@ -41,28 +41,54 @@
     background-color: #dbdbdb;
   }
 
-  .circle .image1 {
-    width: 100px; 
-    height: auto;
+  
+.img-fluid_image1:hover{
+    width:130px;
+    height:auto;
     position: absolute;
     top: 50%;
     left: 60px;
     transform: translate(-50%, -50%);
   }
-  .circle .image2{
-    width: 80px;
-    height: auto;
+.img-fluid_image1{
+  width: 100px;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 60px;
+  transform: translate(-50%, -50%);
+}
+
+.img-fluid_image2:hover{
+    width:100px;
+    height:auto;
     position: absolute;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
+    display: ;
   }
-
-  .circle .image3{
-    width: 90px;
-    height: auto;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-  }
+.img-fluid_image2{
+  width: 80px;
+  height: auto;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.img-fluid_image3:hover{
+  width:120px;
+  height:auto;
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);  
+}
+.img-fluid_image3{
+width: 90px;
+height: auto;
+position: absolute;
+top: 50%;
+right: 20px;
+transform: translateY(-50%);
+}
