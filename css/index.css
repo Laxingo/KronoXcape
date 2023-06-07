@@ -7,7 +7,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #9561d4;
+  background-color: #c2b280;
   font-family: "Viga";
   margin: 0;
   height: 100vh;
@@ -17,7 +17,7 @@ body {
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  background-color: #000;
+  background-color: #242323;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,7 +28,7 @@ body {
   width: 250px;
   height: 250px;
   border-radius: 50%;
-  background-color: #1d1d1d;
+  background-color: #4f4e4e;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -146,4 +146,12 @@ body {
   color: #fff;
 }
 
+.top-right-image {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 100px; /* Adjust the width as needed */
+  height: auto; /* Adjust the height as needed */
+  z-index: 999; /* Ensure the image appears above other elements */
+}
 
