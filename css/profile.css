@@ -2,11 +2,18 @@
     font-family: "Viga";
     src: url("../fonts/Viga-Regular.ttf");
 }
+.logout{
+    width: 50px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+}
 .avatar{
-    width: 400px;
+    width: 300px;
 }
 h1{
-    font-size: 80px;
+    font-size: 50px;
     margin: 30px;
 }
 body {
@@ -24,15 +31,15 @@ body {
     background-color: #934bf3;
     padding: 75px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 500px;
-    height: 100px;
+    width: 430px;
+    height: 80px;
     max-width: auto;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 50px;
+    font-size: 40px;
     text-align: center;
 }
 .p1{
@@ -43,8 +50,8 @@ body {
     background-color: #f8f6fb;
     padding: 75px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 500px;
-    height: 100px;
+    width: 400px;
+    height: 80px;
     max-width: auto;
     margin: 0 auto;
     display: flex;
@@ -59,7 +66,7 @@ body {
     background-color: #f8f6fb;
     padding: 75px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 500px;
+    width: 400px;
     height: 100px;
     max-width: auto;
     margin: 0 auto;
@@ -67,7 +74,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 50px;
+    font-size: 40px;
     text-align: center;
 }
 .card2{
@@ -75,15 +82,15 @@ body {
     background-color: #e3dbfa;
     padding: 75px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 500px;
-    height: 100px;
+    width: 430px;
+    height: 80px;
     max-width: auto;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 50px;
+    font-size: 40px;
     text-align: center;
 }
 .p2{
@@ -97,3 +104,10 @@ body {
 .a1,
 .a2{text-decoration: none;
 }
+.xmark-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50px;
+}
+
