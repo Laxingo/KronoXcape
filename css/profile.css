@@ -1,72 +1,99 @@
 @font-face {
     font-family: "Viga";
     src: url("../fonts/Viga-Regular.ttf");
-  }
-  
-  body {
-    display:flow-root;
+}
+.avatar{
+    width: 400px;
+}
+h1{
+    font-size: 80px;
+    margin: 30px;
+}
+body {
+    display:flex;
     align-items: center;
     justify-content: center;
     background-color: #a186ee;
     font-family: "Viga";
     margin: 0;
     height: 100vh;
-  }
-  .card1{
-  border-radius: 100px;
-  background-color: #934bf3(242, 242, 242, 0.7);
-  padding: 75px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 500px;
-  height: 100px;
-  max-width:auto;
-  margin: 0 auto;
-}
-a:hover{
-    border: 80px white;
-}
-.card2{
+    flex-direction: column;
+} 
+.card1{
     border-radius: 100px;
-    background-color: rgba(242, 242, 242, 0.7);
-    border: 5px white;
+    background-color: #934bf3;
     padding: 75px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 500px;
     height: 100px;
     max-width: auto;
     margin: 0 auto;
-}
-.card2:hover{
-    border: 50px white;
-
-}
-.card-body h2 {
-    text-align: center;
-    font-size: 50px;
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-}
-.card-body h2
-
-.text-decoration-none {
-    color: black;
-    font-size: 22px;
+    align-items: center;
+    font-size: 50px;
+    text-align: center;
 }
 .p1{
-
-    font-size: 40px;
     color: white;
+}
+.a1:hover{
+    border-radius: 100px;
+    background-color: #f8f6fb;
+    padding: 75px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    height: 100px;
+    max-width: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-size: 50px;
+    text-align: center;
+}
+.a2:hover{
+    border-radius: 100px;
+    background-color: #f8f6fb;
+    padding: 75px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    height: 100px;
+    max-width: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    text-align: center;
+}
+.card2{
+    border-radius: 100px;
+    background-color: #e3dbfa;
+    padding: 75px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    height: 100px;
+    max-width: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    text-align: center;
 }
 .p2{
-    font-size: 40px;
-    color:black;
-    justify-content: center;
-    align-items: center;
-
+    color: black;
 }
-image{
-    width: 100px;
-    height: auto;
+.avatar,
+.container1,
+.container2 {
+  margin-bottom: 20px;
+}
+.a1,
+.a2{text-decoration: none;
 }
