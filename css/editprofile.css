@@ -1,0 +1,108 @@
+@font-face {
+    font-family: "Viga";
+    src: url("../fonts/Viga-Regular.ttf");
+}
+
+body {
+    overflow: hidden;
+    background-color: #c2b280;
+    font-family: "Viga";
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    padding: 20px;
+    max-width: 600px;
+}
+
+.xmark-container {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+.xmark-container i {
+    color: #fff;
+    font-size: 100px;
+}
+
+.image-container {
+    display: flex;
+    margin-top: 20px;
+}
+.edit-profile{
+    margin:40px;
+    color: #e4dfd0;
+    font-size: 40px;
+}
+.middletext{
+    color: #e4dfd0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 40px;
+    margin-top:-20px ;
+}
+.card {
+    border-radius: 100px;
+    position: absolute;
+    background-color: rgba(242, 242, 242, 0.7);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 800px;
+    margin-left:300px ;
+}
+.custom-card{
+    height:10px ;
+}
+.custom-card2{
+    height: 100px;
+}
+.card-direita{
+    right: 10px;
+    border-radius: 100px;
+    position: absolute;
+    background-color: rgba(242, 242, 242, 0.7);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 570px;
+    margin-right: 33px;
+}
+.card-esquerda {
+    border-radius: 100px;
+    position: absolute;
+    background-color: rgba(242, 242, 242, 0.7);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 570px;
+    margin-left: 40px;
+}
+.card-direita-bottom{
+    right: 10px;
+    border-radius: 100px;
+    position: absolute;
+    background-color: rgba(242, 242, 242, 0.7);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 570px;
+    margin-right: 33px;
+    margin-top: 23px;
+}
+.card-esquerda-bottom {
+    border-radius: 100px;
+    position: absolute;
+    background-color: rgba(242, 242, 242, 0.7);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 570px;
+    margin-left: 40px;
+    margin-top: 23px;
+}
+.custom-card3{
+    height: 100px;
+}
+.text-input{
+    background-color: #e4dfd0;
+    margin-top: 25px;
+    margin-left:100px;
+    width: 600px;
+    height: 50px;
+    border: none;
+    font-size: 30px;
+}
