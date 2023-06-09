@@ -42,7 +42,7 @@ body {
 }
 
 .img-fluid_image1 {
-  width: 100px;
+  width: 90px;
   height: auto;
   position: absolute;
   top: 50%;
@@ -52,7 +52,7 @@ body {
 }
 
 .img-fluid_image1:hover {
-  width: 115px;
+  width: 105px;
   height: auto;
   position: absolute;
   top: 50%;
@@ -61,7 +61,7 @@ body {
 }
 
 .img-fluid_image2 {
-  width: 80px;
+  width: 75px;
   height: auto;
   position: absolute;
   top: 20px;
@@ -72,7 +72,7 @@ body {
 }
 
 .img-fluid_image2:hover {
-  width: 90px;
+  width: 85px;
   height: auto;
   position: absolute;
   top: 20px;
@@ -92,7 +92,7 @@ body {
 }
 
 .img-fluid_image3:hover {
-  width: 110px;
+  width: 100px;
   height: auto;
   position: absolute;
   top: 50%;
@@ -140,7 +140,7 @@ body {
   opacity: 0;
   position: absolute;
   bottom: 180px;
-  left: calc(86%);
+  left: calc(87%);
   transform: translate(-50%, -50%);
   font-size: 15px;
   color: #fff;

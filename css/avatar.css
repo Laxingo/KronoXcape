@@ -1,0 +1,147 @@
+@font-face {
+  font-family: "Viga";
+  src: url("../fonts/Viga-Regular.ttf");
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #c2b280;
+  font-family: "Viga";
+  margin: 0;
+  height: 100vh;
+}
+
+.transparent-rectangle {
+  background-color: rgba(0, 0, 0, 0.25);
+  height: 500px;
+  width: 700px;
+  border-radius: 50px;
+  margin-top: 20px;
+  right: 20px;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.avatar-images-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar-images-container img {
+  width: 250px;
+  height: 250px;
+  margin-bottom: 20px;
+}
+
+.avatar-container {
+  text-align: center;
+  position: absolute;
+  top: 225px;
+  left: 175px;
+  width: 400px;
+  height: 400px;
+}
+
+.img-fluid {
+  width: 300px;
+  height: 300px;
+}
+
+.label1 {
+  margin-top: 10px;
+  display: block;
+  font-size: 25px;
+  color: black;
+}
+
+.xmark-container {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+.xmark-container i {
+  color: #fff !important;
+  font-size: 80px;
+}
+
+.save-container {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}  
+
+.save-container i {
+  color: #fff !important;
+  font-size: 50px;
+}
+
+.grey-image-container {
+  position: relative;
+}
+
+.grey-image-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 95%;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  z-index: 0;
+}
+
+.label2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 10px;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.grey-image-container:nth-child(3)::before {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.label3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 10px;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+/* Custom scrollbar styles */
+.avatar-images-container::-webkit-scrollbar {
+  width: 10px;
+  background:#f1f1f1b8; /* Replace with your desired gradient colors */
+}
+
+.avatar-images-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(to right, #ecd905, #b5a602); /* Replace with your desired gradient colors */
+}
+
