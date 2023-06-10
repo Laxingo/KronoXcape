@@ -1,70 +1,78 @@
 import * as User from "../models/UserModel.js";
 
-function registerView() {
+function RegisterView() {
   User.init();
 
-  const registerButton = document.getElementById("registerButton");
-  const usernameInput = document.getElementById("username");
-  const passwordInput = document.getElementById("password");
-  const emailInput = document.getElementById("email");
-  const confirmPasswordInput = document.getElementById("confirmPassword");
-  const errorMessage = document.getElementById("msgRegister");
+  const registerForm = document.getElementById("registerForm");
+  const errorMsg = document.getElementById("errorMsg");
 
-  registerButton.addEventListener("click", async (event) => {
+  registerForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const registerUsername = usernameInput.value;
-    const registerPassword = passwordInput.value;
-    const registerEmail = emailInput.value;
-    const registerConfirmPassword = confirmPasswordInput.value;
+    const usernameInput = document.getElementById("username");
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+    const confirmPasswordInput = document.getElementById("confirmPassword");
 
-    if (registerPassword !== registerConfirmPassword) {
-      errorMessage.textContent = "Password and Confirm Password are not equal";
-      return;
-    }
-
-    if (!registerFormIsValid()) {
-      errorMessage.textContent = "Please fill in all the required fields";
-      return;
-    }
+    const username = usernameInput.value.trim();
+    const email = emailInput.value.trim();
+    const password = passwordInput.value;
+    const confirmPassword = confirmPasswordInput.value;
 
     try {
-      await User.add(registerUsername, registerPassword, registerEmail);
-      errorMessage.textContent = "";
+      // Validate username
+      if (username.length < 3) {
+        throw new Error("Username must be at least 3 characters long!");
+      }
 
+      // Validate email
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        throw new Error("Invalid email address!");
+      }
+
+      // Validate password
+      if (password.length < 6) {
+        throw new Error("Password must be at least 6 characters long!");
+      }
+
+      // Validate confirmPassword
+      if (password !== confirmPassword) {
+        throw new Error("Passwords do not match!");
+      }
+
+      // Check if the username is already being used
+      const users = JSON.parse(localStorage.getItem("users")) || [];
+      const existingUser = users.find((user) => user.username === username);
+      if (existingUser) {
+        throw new Error("That username is already being used!");
+      }
+
+      // Save new user data to localStorage using UserModel.js add function
+      User.add(username, password);
+
+      console.log("User registered successfully!");
+
+      // Display success message using Bootstrap alert
+      errorMsg.classList.remove("alert-danger");
+      errorMsg.classList.add("alert-success");
+      errorMsg.textContent = "User registered successfully!";
+      errorMsg.classList.remove("d-none");
+
+      // Delay the redirection by 2 seconds
       setTimeout(() => {
-        window.location.replace("login.html");
-      }, 1000);
-    } catch (e) {
-      errorMessage.textContent = e.message;
+        window.location.replace("../html/login.html");
+      }, 500);
+    } catch (error) {
+      console.error(error.message);
+
+      // Display error message using Bootstrap alert
+      errorMsg.classList.remove("alert-success");
+      errorMsg.classList.add("alert-danger");
+      errorMsg.textContent = error.message;
+      errorMsg.classList.remove("d-none");
     }
   });
-
-  function updateRegisterButtonState() {
-    const isValid = registerFormIsValid();
-    registerButton.disabled = !isValid;
-  }
-
-  usernameInput.addEventListener("input", updateRegisterButtonState);
-  passwordInput.addEventListener("input", updateRegisterButtonState);
-  emailInput.addEventListener("input", updateRegisterButtonState);
-  confirmPasswordInput.addEventListener("input", updateRegisterButtonState);
-
-  updateRegisterButtonState();
 }
 
-function registerFormIsValid() {
-  const registerUsername = document.getElementById("username").value;
-  const registerPassword = document.getElementById("password").value;
-  const registerEmail = document.getElementById("email").value;
-  const registerConfirmPassword = document.getElementById("confirmPassword").value;
-
-  return (
-    registerUsername !== "" &&
-    registerPassword !== "" &&
-    registerEmail !== "" &&
-    registerConfirmPassword !== ""
-  );
-}
-
-registerView();
+RegisterView();
