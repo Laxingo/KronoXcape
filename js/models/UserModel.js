@@ -43,6 +43,7 @@ export function getUserLogged() {
   return JSON.parse(sessionStorage.getItem("loggedUser"));
 }
 
+
 /**
  * CLASSE QUE MODELA UM UTILIZADOR NA APLICAÇÃO
  */

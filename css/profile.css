@@ -29,6 +29,7 @@
     margin: 0;
     height: 100vh;
     flex-direction: column;
+    background-image: url("https://www.transparenttextures.com/patterns/dark-exa.png");
   }
   
   .container1,

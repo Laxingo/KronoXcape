@@ -5,14 +5,45 @@ function RegisterView() {
 
   const registerForm = document.getElementById("registerForm");
   const errorMsg = document.getElementById("errorMsg");
+  const registerButton = document.getElementById("registerButton");
+
+  const usernameInput = document.getElementById("username");
+  const emailInput = document.getElementById("email");
+  const passwordInput = document.getElementById("password");
+  const confirmPasswordInput = document.getElementById("confirmPassword");
+
+  // Function to check if all fields are filled
+  function checkFields() {
+    const username = usernameInput.value.trim();
+    const email = emailInput.value.trim();
+    const password = passwordInput.value;
+    const confirmPassword = confirmPasswordInput.value;
+
+    return username !== "" && email !== "" && password !== "" && confirmPassword !== "";
+  }
+
+  // Disable register button initially
+  registerButton.disabled = true;
+
+  // Add event listeners to input fields
+  usernameInput.addEventListener("input", () => {
+    registerButton.disabled = !checkFields();
+  });
+
+  emailInput.addEventListener("input", () => {
+    registerButton.disabled = !checkFields();
+  });
+
+  passwordInput.addEventListener("input", () => {
+    registerButton.disabled = !checkFields();
+  });
+
+  confirmPasswordInput.addEventListener("input", () => {
+    registerButton.disabled = !checkFields();
+  });
 
   registerForm.addEventListener("submit", (event) => {
     event.preventDefault();
-
-    const usernameInput = document.getElementById("username");
-    const emailInput = document.getElementById("email");
-    const passwordInput = document.getElementById("password");
-    const confirmPasswordInput = document.getElementById("confirmPassword");
 
     const username = usernameInput.value.trim();
     const email = emailInput.value.trim();
@@ -62,7 +93,7 @@ function RegisterView() {
       // Delay the redirection by 2 seconds
       setTimeout(() => {
         window.location.replace("../html/login.html");
-      }, 500);
+      }, 1000);
     } catch (error) {
       console.error(error.message);
 
