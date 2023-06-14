@@ -1,0 +1,70 @@
+@font-face {
+  font-family: "Viga";
+  src: url("../fonts/Viga-Regular.ttf");
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #c2b280;
+  font-family: "Viga";
+  margin: 0;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.container img {
+  border-radius: 10px;
+  border: 2px solid black;
+  width: 800px;
+  height: 600px;
+  object-fit: cover;
+}
+
+.progress {
+  position: fixed;
+  top: 75px;
+  left: 480px;
+  width: 46.5%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e1e18b;
+}
+
+.progress-bar {
+  width: 50%;
+  height: 100%;
+  background-color: #ffcc33;
+}
+
+.timer-overlay {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.25);
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 20px;
+}
+
+.timer-overlay #timer-text {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+
+
+
+
+

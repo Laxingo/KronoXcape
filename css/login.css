@@ -4,7 +4,7 @@
 }
 
 body {
-    background-image: url("../Images/brain-left.png"), url("../Images/brain-right.png");
+    background-image: url("../Images/icons/brain-left.png"), url("../Images/icons/brain-right.png");
     background-repeat: no-repeat, no-repeat;
     background-position: top left, bottom right;
     background-size: 75%, 75%; 
