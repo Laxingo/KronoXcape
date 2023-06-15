@@ -34,7 +34,6 @@ body {
 .progress {
   position: fixed;
   top: 75px;
-  left: 480px;
   width: 46.5%;
   height: 30px;
   display: flex;
@@ -57,7 +56,8 @@ body {
   padding: 10px;
   border-radius: 5px;
   color: #fff;
-  font-size: 20px;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .timer-overlay #timer-text {
@@ -120,7 +120,19 @@ body {
   border-radius: 10px;
 }
 
-
+.popup {
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: none;
+}
 
 
 
