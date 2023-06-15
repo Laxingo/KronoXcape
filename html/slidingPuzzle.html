@@ -7,26 +7,29 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(3, 1fr);
-      gap: 5px;
+      gap: 0;
+      grid-auto-rows: 1fr;
       width: 320px;
       height: 320px;
       margin: 0 auto;
     }
 
     .tile {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none; /* Remove the border */
-  font-size: 24px;
-  cursor: pointer;
-  position: relative;
-}
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none; 
+      font-size: 24px;
+      cursor: pointer;
+      position: relative;
+    }
 
     .tile img {
+      width: auto;
+      height: 100%;
       max-width: 100%;
       max-height: 100%;
-      position: absolute;
+      object-fit: fill; 
     }
 
     .empty {
@@ -44,6 +47,16 @@
       font-weight: bold;
       color: green;
     }
+
+    .tile.empty img {
+      opacity: 0;
+      transition: opacity 1000s ease-in-out; /* Increased the duration to 1 second */
+    }
+
+    .tile.empty img.show {
+      opacity: 1;
+      transition: opacity 1000s ease-in-out; /* Increased the duration to 1 second */
+    }
   </style>
 </head>
 <body>
@@ -57,7 +70,7 @@
     <div class="tile tile-4" style="grid-row: 2; grid-column: 3;"><img src="../Images/SlidingPuzzle/row-2-column-1.png"></div>
     <div class="tile tile-8" style="grid-row: 3; grid-column: 1;"><img src="../Images/SlidingPuzzle/row-3-column-2.png"></div>
     <div class="tile tile-3" style="grid-row: 3; grid-column: 2;"><img src="../Images/SlidingPuzzle/row-1-column-3.png"></div>
-    <div class="tile empty tile-9" style="grid-row: 3; grid-column: 3;"></div>
+    <div class="tile empty tile-9" style="grid-row: 3; grid-column: 3;"><img src="../Images/SlidingPuzzle/row-3-column-3.png" class="show"></div>
   </div>
   <div id="win-message"></div>
 
@@ -134,21 +147,27 @@
 
       // Check if the puzzle is solved
       function checkSolution() {
-  const currentCombination = tiles.map(tile => tile.classList.contains('empty') ? 'empty' : tile.classList[1]);
-  isSolved = JSON.stringify(currentCombination) === JSON.stringify(winningCombination);
+        const currentCombination = tiles.map(tile =>
+          tile.classList.contains('empty') ? 'empty' : tile.classList[1]
+        );
+        isSolved = JSON.stringify(currentCombination) === JSON.stringify(winningCombination);
 
-  if (isSolved) {
-    puzzle.classList.add('solved');
-    const winMessage = document.getElementById('win-message');
-    winMessage.textContent = 'YOU WON';
-    winMessage.style.display = 'block';
-  } else {
-    puzzle.classList.remove('solved');
-    const winMessage = document.getElementById('win-message');
-    winMessage.style.display = 'none';
-  }
-}
+        if (isSolved) {
+          puzzle.classList.add('solved');
+          const winMessage = document.getElementById('win-message');
+          winMessage.textContent = 'Congratulations! Puzzle solved!';
+          winMessage.style.display = 'block';
 
+          emptyTile.querySelector('img').classList.add('show'); // Add .show class to fade in the image
+
+        } else {
+          puzzle.classList.remove('solved');
+          document.getElementById('win-message').style.display = 'none';
+          emptyTile.querySelector('img').classList.remove('show'); // Remove .show class to hide the image
+        }
+      }
+
+      // Initialize the puzzle on page load
       initializePuzzle();
     });
   </script>
