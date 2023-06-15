@@ -1,11 +1,9 @@
-let users;
+let users = [];
 
-// CARREGAR UTILIZADORES DA LOCALSTORAGE
 export function init() {
   users = localStorage.users ? JSON.parse(localStorage.users) : [];
 }
 
-// ADICIONAR UTILIZADOR
 export function add(username, password) {
   if (users.some((user) => user.username === username)) {
     throw Error(`User with username "${username}" already exists!`);
@@ -15,7 +13,6 @@ export function add(username, password) {
   }
 }
 
-// LOGIN DO UTILIZADOR
 export function login(username, password) {
   const user = users.find(
     (user) => user.username === username && user.password === password
@@ -28,29 +25,23 @@ export function login(username, password) {
   }
 }
 
-// LOGOUT DO UTILIZADOR
 export function logout() {
   sessionStorage.removeItem("loggedUser");
 }
 
-// VERIFICA EXISTÊNCIA DE ALGUÉM AUTENTICADO
 export function isLogged() {
   return sessionStorage.getItem("loggedUser") ? true : false;
 }
 
-// DEVOLVE UTILZIADOR AUTENTICADO
 export function getUserLogged() {
-  return JSON.parse(sessionStorage.getItem("loggedUser"));
+  const loggedUser = sessionStorage.getItem("loggedUser");
 }
 
+export function getUsers() {
+  return users;
+}
 
-/**
- * CLASSE QUE MODELA UM UTILIZADOR NA APLICAÇÃO
- */
-class User {
-  username = "";
-  password = "";
-
+export class User {
   constructor(username, password) {
     this.username = username;
     this.password = password;
