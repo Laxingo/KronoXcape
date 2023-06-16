@@ -12,6 +12,8 @@
 </head>
 
 <body>
+    <button id="open-popup">Open Puzzle</button>
+
     <div class="popup" id="popup">
         <button onclick="startTimer()">Start</button>
       </div>    
@@ -58,7 +60,19 @@
     </div>
 
     <script type="module" src="../js/views/RoomView.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>~
+    <script>
+        function openPopup() {
+      const width = 400;
+      const height = 400;
+      const left = (window.innerWidth - width) / 2;
+      const top = (window.innerHeight - height) / 2;
+      const options = `width=${width},height=${height},left=${left},top=${top}`;
+      const puzzleWindow = window.open('slidingPuzzle.html', '_blank', options);
+    }
+
+    document.getElementById('open-popup').addEventListener('click', openPopup);
+ </script>
 </body>
 
 </html>
