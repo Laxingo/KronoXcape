@@ -2,63 +2,51 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/ancient_egypt.css">
-    <link rel="icon" type="image/x-icon" href="/images/icons/KX_Logo.png">
-    <script src="../js/ancient_egypt.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/ancient_egypt.css">
+  <link rel="icon" type="image/x-icon" href="/images/icons/KX_Logo.png">
 </head>
 
 <body>
-    <div class="popup" id="popup">
-        <button onclick="startTimer()">Start</button>
-      </div>    
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-sm-6 col-md-4">
-                <div class="square square-1"></div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4">
-                <div class="square square-2"></div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4">
-                <div class="square square-3"></div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4">
-                <div class="square square-4"></div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4">
-                <div class="square square-5"></div>
-            </div>
+
+  <div class="progress-container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <div class="progress" style="height: 10px;">
+          <div class="progress-bar" role="progressbar" style="width: 75%; height: 100%;"
+            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-12">
-                <img src="../Images/rooms/quarto_egipto_luz_sem_neblina.png" class="img-fluid ml-5"
-                    alt="Responsive Image">
-            </div>
-        </div>
-        <div class="row justify-content-center mt-3">
-            <div class="col-6">
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                        50%
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-2">
-                <div id="timer" class="timer-overlay">
-                    <span id="timer-text"></span>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
+  </div>
 
+  <div class="timer-container mt-3">
+    <div class="position-fixed top-0 right-0 m-3">
+      <div class="timer">
+        <span id="minutes">00</span>
+        <span id="colon">:</span>
+        <span id="seconds">00</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <div class="image-container d-flex align-items-center justify-content-center">
+          <div class="border border-warning rounded">
+            <span></span>
+            <img src="../Images/rooms/quarto_egipto_luz_sem_neblina.png" class="img-fluid rounded"
+              alt="Responsive Image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
     <script type="module" src="../js/views/RoomView.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>~
+    
 </body>
-
-</html>
