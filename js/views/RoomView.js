@@ -1,31 +1,46 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var timerElement = document.getElementById("timer-text");
-    var timeInSeconds = 360;
-    timerElement.textContent = formatTime(timeInSeconds);
-  
-    var countdownInterval = setInterval(function() {
-      timeInSeconds--;
-      timerElement.textContent = formatTime(timeInSeconds);
-  
-      if (timeInSeconds <= 0) {
-        clearInterval(countdownInterval);
-        alert("Time's up!");
-      } else if(timeInSeconds<=300 && timeInSeconds >= 0) {
-        var isEvenSecond = timeInSeconds % 2 === 0;
-        timerElement.style.color = isEvenSecond ? "red" : ""; // Toggle text color every second
+  var minutesDisplay = document.getElementById("minutes");
+  var secondsDisplay = document.getElementById("seconds");
+  var colonDisplay = document.getElementById("colon");
+
+  var totalSeconds = 7 * 60; // 7 minutes in seconds
+
+  function updateTime() {
+    var minutes = Math.floor(totalSeconds / 60);
+    var seconds = totalSeconds % 60;
+
+    minutesDisplay.textContent = padTime(minutes);
+    secondsDisplay.textContent = padTime(seconds);
+
+    if (totalSeconds <= 0) {
+      clearInterval(timer);
+      // Timer finished, do something here
+      // For example, display a message or redirect to another page
+      console.log("Timer finished!");
+    } else {
+      if (minutes <= 5) {
+        if (seconds % 2 === 0) {
+          minutesDisplay.style.color = "red";
+          secondsDisplay.style.color = "red";
+          colonDisplay.style.color = "red";
+        } else {
+          minutesDisplay.style.color = "white";
+          secondsDisplay.style.color = "white";
+          colonDisplay.style.color = "white";
+        }
+      } else {
+        minutesDisplay.style.color = "";
+        secondsDisplay.style.color = "";
+        colonDisplay.style.color = "";
       }
-    }, 1000);
-  
-    function formatTime(timeInSeconds) {
-      var minutes = Math.floor(timeInSeconds / 60);
-      var seconds = timeInSeconds % 60;
-      return pad(minutes) + ":" + pad(seconds);
+      totalSeconds--;
     }
-  
-    function pad(number) {
-      return (number < 10 ? "0" : "") + number;
-    }
-  });
-  
-  
-  
+  }
+
+  function padTime(time) {
+    return time.toString().padStart(2, "0");
+  }
+
+  var timer = setInterval(updateTime, 1000);
+});
+
