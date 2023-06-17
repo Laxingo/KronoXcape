@@ -38,15 +38,34 @@
       <div class="col-6">
         <div class="image-container d-flex align-items-center justify-content-center">
           <div class="border border-warning rounded">
-            <span></span>
-            <img src="../Images/rooms/quarto_egipto_luz_sem_neblina.png" class="img-fluid rounded"
-              alt="Responsive Image">
+            <img src="../Images/rooms/quarto_egipto_luz_sem_neblina.png" usemap="#image_map">
+            <map name="image_map">
+              <area target="_self" title="" href="../html/slidingPuzzle.html" coords="249,56,314,202" shape="rect">
+            </map>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Add squares below the image -->
+    <div class="row justify-content-center mt-4">
+      <div class="col-12">
+        <div class="d-flex justify-content-center">
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+        </div>
+      </div>
+    </div>
+    <!-- End of squares -->
+
   </div>
-    <script type="module" src="../js/views/RoomView.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>~
-    
+
+  <script type="module" src="../js/views/RoomView.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
+
+</html>
