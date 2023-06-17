@@ -2,9 +2,65 @@
 <html>
 <head>
   <title>Sliding Puzzle</title>
-  <link rel="stylesheet" href="../css/slidingPuzzle.css">
+  <style>
+    .puzzle {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 0;
+      grid-auto-rows: 1fr;
+      width: 320px;
+      height: 320px;
+      margin: 0 auto;
+    }
+
+    .tile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none; 
+      font-size: 24px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .tile img {
+      width: auto;
+      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: fill; 
+    }
+
+    .empty {
+      background-color: #ffffff;
+    }
+
+    .solved {
+      background-color: lightgreen;
+    }
+
+    #win-message {
+      display: none;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: green;
+    }
+
+    .tile.empty img {
+      opacity: 0;
+      transition: opacity 1000s ease-in-out; /* Increased the duration to 1 second */
+    }
+
+    .tile.empty img.show {
+      opacity: 1;
+      transition: opacity 1000s ease-in-out; /* Increased the duration to 1 second */
+    }
+  </style>
 </head>
 <body>
+  <h1>Sliding Puzzle</h1>
   <div class="puzzle" id="puzzle">
     <div class="tile tile-2" style="grid-row: 1; grid-column: 1;"><img src="../Images/SlidingPuzzle/row-1-column-2.png"></div>
     <div class="tile tile-5" style="grid-row: 1; grid-column: 2;"><img src="../Images/SlidingPuzzle/row-2-column-2.png"></div>
@@ -18,6 +74,102 @@
   </div>
   <div id="win-message"></div>
 
-  <script src="../js/views/SlidingPuzzleView.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const tiles = Array.from(document.querySelectorAll('.tile'));
+      const emptyTile = document.querySelector('.empty');
+      const puzzle = document.getElementById('puzzle');
+      const puzzleWidth = 3;
+      const puzzleHeight = 3;
+      let emptyTileIndex = 8;
+      const winningCombination = ['tile-1', 'tile-2', 'tile-3', 'tile-4', 'tile-5', 'tile-6', 'tile-7', 'tile-8', 'empty'];
+      let isSolved = false;
+
+      // Initialize the puzzle
+      function initializePuzzle() {
+        tiles.forEach(function(tile, index) {
+          tile.addEventListener('click', function() {
+            if (!isSolved) {
+              moveTile(index);
+            }
+          });
+        });
+
+        window.addEventListener('keydown', function(event) {
+          if (!isSolved) {
+            const keyCode = event.keyCode;
+            if (keyCode === 37) {
+              moveTile(emptyTileIndex + 1); // Move right
+            } else if (keyCode === 38) {
+              moveTile(emptyTileIndex + puzzleWidth); // Move down
+            } else if (keyCode === 39) {
+              moveTile(emptyTileIndex - 1); // Move left
+            } else if (keyCode === 40) {
+              moveTile(emptyTileIndex - puzzleWidth); // Move up
+            }
+          }
+        });
+
+        checkSolution();
+      }
+
+      // Move the tile to the empty slot
+      function moveTile(tileIndex) {
+        if (isAdjacent(tileIndex, emptyTileIndex)) {
+          swapTiles(tileIndex, emptyTileIndex);
+          emptyTileIndex = tileIndex;
+          checkSolution();
+        }
+      }
+
+      // Check if two tiles are adjacent
+      function isAdjacent(index1, index2) {
+        const row1 = Math.floor(index1 / puzzleWidth);
+        const col1 = index1 % puzzleWidth;
+        const row2 = Math.floor(index2 / puzzleWidth);
+        const col2 = index2 % puzzleWidth;
+        return (
+          (Math.abs(row1 - row2) === 1 && col1 === col2) ||
+          (Math.abs(col1 - col2) === 1 && row1 === row2)
+        );
+      }
+
+      // Swap the positions of two tiles
+      function swapTiles(index1, index2) {
+        const tempClass = tiles[index1].classList.value;
+        tiles[index1].classList.value = tiles[index2].classList.value;
+        tiles[index2].classList.value = tempClass;
+
+        const tempContent = tiles[index1].innerHTML;
+        tiles[index1].innerHTML = tiles[index2].innerHTML;
+        tiles[index2].innerHTML = tempContent;
+      }
+
+      // Check if the puzzle is solved
+      function checkSolution() {
+        const currentCombination = tiles.map(tile =>
+          tile.classList.contains('empty') ? 'empty' : tile.classList[1]
+        );
+        isSolved = JSON.stringify(currentCombination) === JSON.stringify(winningCombination);
+
+        if (isSolved) {
+          puzzle.classList.add('solved');
+          const winMessage = document.getElementById('win-message');
+          winMessage.textContent = 'Congratulations! Puzzle solved!';
+          winMessage.style.display = 'block';
+
+          emptyTile.querySelector('img').classList.add('show'); // Add .show class to fade in the image
+
+        } else {
+          puzzle.classList.remove('solved');
+          document.getElementById('win-message').style.display = 'none';
+          emptyTile.querySelector('img').classList.remove('show'); // Remove .show class to hide the image
+        }
+      }
+
+      // Initialize the puzzle on page load
+      initializePuzzle();
+    });
+  </script>
 </body>
 </html>
