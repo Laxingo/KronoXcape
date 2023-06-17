@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>questions</title>
+</head>
+<body>
+    <body id="bodyblanks">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-body">
+                    <div class="question2">
+                        <p id="sentence">What's the egyptian God of the sun?</p>
+                    <ul id="options1" class="list-unstyled">
+                      <div class="row">
+                        <div class="col text-left">
+                                    <button class="btn custom-button" onclick="checkAnswer(1, 'a')">Anubis</button>
+                                    <button class="btn custom-button" onclick="checkAnswer(1,'b')">Horus</button>
+                                </div>
+                                <div class="col text-right">
+                                    <button class="btn custom-button" onclick="checkAnswer(1, 'c')">Bastet</button>
+                                    <button class="btn custom-button" onclick="checkAnswer(1, 'd')">Isis</button>
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="question2">
+                        <p>Which ancient Egyptian pharaoh is known for constructing the Great Pyramid of Giza?</p>
+                        <ul id="options2" class="list-unstyled" style="display:none;">
+                            <div class="row">
+                                <div class="col text-left">
+                                    <button class="btn custom-button" onclick="checkAnswer(2, 'a')">Ramses II</button>
+                                    <button class="btn custom-button" onclick="checkAnswer(2, 'b')">Tutankhamun</button>
+                                </div>
+                                <div class="col text-right">
+                                    <button class="btn custom-button" onclick="checkAnswer(2, 'c')">Cleopatra</button>
+                                    <button class="btn custom-button" onclick="checkAnswer(2, 'd')">Khufu</button>
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="question3">
+                        <p>Which pyramid is the largest in Egypt?</p>
+                        <ul id="options2" class="list-unstyled" style="display:none;">
+                            <div class="row">
+                                <div class="col text-left">
+                                    <button class="btn custom-button" onclick="checkAnswer(3, 'a')">Pyramid of Djoser</button>
+                                    <button class="btn custom-button" onclick="checkAnswer(3, 'b')">Pyramid of Khafre</button>
+                                </div>
+                                <div class="col text-right">
+                                    <button class="btn custom-button" onclick="checkAnswer(3, 'c')">Pyramid of Menkaure</button>
+                                    <button class="btn custom-button" onclick="checkAnswer(3, 'd')">Great Pyramid of Giza</button>
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="question4">
+                        <p>Which famous river flows through Egypt?</p>
+                        <ul id="options2" class="list-unstyled" style="display:none;">
+                            <div class="row">
+                                <div class="col text-left">
+                                    <button class="btn custom-button" onclick="checkAnswer(4, 'a')">Nile</button>
+                                    <button class="btn custom-button" onclick="checkAnswer(4, 'b')">Amazon</button>
+                                </div>
+                                <div class="col text-right">
+                                    <button class="btn custom-button" onclick="checkAnswer(4, 'c')">Mississippi</button>
+                                    <button class="btn custom-button" onclick="checkAnswer(4, 'd')">Yangtze</button>
+                                </div>
+                            </div>
+                        </ul>
+                  <p id="result"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+            function checkAnswer(questionNumber,selectedAnswer ) {
+              let correctAnswer;
+          
+              // Set the correct answer based on the question number
+              if (questionNumber === 1) {
+                correctAnswer = 'b';
+              } else if (questionNumber === 2) {
+                correctAnswer = 'd';
+              } else if (questionNumber === 3) {
+                correctAnswer = 'c';
+              } else if (questionNumber === 4) {
+                correctAnswer ='a'
+              }
+          
+              if (selectedAnswer === correctAnswer) {
+                alert('Correct answer!');
+              } else {
+                alert('Wrong answer. Try again.');
+              }
+            }
+
+
+          </script>
+
+</body>
+
+</html>
