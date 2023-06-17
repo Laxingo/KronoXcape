@@ -22,14 +22,14 @@ body {
   display: inline-block;
 }
 
-.square {
-  width: 85px;
-  height: 85px;
-  background-color: rgba(255, 255, 255, 0.5);
-  margin: 5px; /* Adjusted margin value */
-  border-radius: 10px;
-}
-
 .container {
   margin-top: 50px;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(255, 255, 255, 0.5);
+  margin: 5px;
+  border-radius: 10px;
 }
