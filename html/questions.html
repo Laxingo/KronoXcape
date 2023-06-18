@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>questions</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <div id="question1">
+              <p id="sentence">What's the Egyptian God of the sun?</p>
+              <ul id="options1" class="list-unstyled">
+                <div class="row">
+                  <div class="col text-left">
+                    <button class="btn custom-button" onclick="checkAnswer(1, 'a')">Anubis</button>
+                    <button class="btn custom-button" onclick="checkAnswer(1,'b')">Horus</button>
+                  </div>
+                  <div class="col text-right">
+                    <button class="btn custom-button" onclick="checkAnswer(1, 'c')">Bastet</button>
+                    <button class="btn custom-button" onclick="checkAnswer(1, 'd')">Isis</button>
+                  </div>
+                </div>
+              </ul>
+            </div>
+            <div id="question2">
+              <p>Which ancient Egyptian pharaoh is known for constructing the Great Pyramid of Giza?</p>
+              <ul id="options2" class="list-unstyled">
+                <div class="row">
+                  <div class="col text-left">
+                    <button class="btn custom-button" onclick="checkAnswer(2, 'a')">Ramses II</button>
+                    <button class="btn custom-button" onclick="checkAnswer(2, 'b')">Tutankhamun</button>
+                  </div>
+                  <div class="col text-right">
+                    <button class="btn custom-button" onclick="checkAnswer(2, 'c')">Cleopatra</button>
+                    <button class="btn custom-button" onclick="checkAnswer(2, 'd')">Khufu</button>
+                  </div>
+                </div>
+              </ul>
+            </div>
+            <div id="question3">
+              <p>Which pyramid is the largest in Egypt?</p>
+              <ul id="options3" class="list-unstyled">
+                <div class="row">
+                  <div class="col text-left">
+                    <button class="btn custom-button" onclick="checkAnswer(3, 'a')">Pyramid of Djoser</button>
+                    <button class="btn custom-button" onclick="checkAnswer(3, 'b')">Pyramid of Khafre</button>
+                  </div>
+                  <div class="col text-right">
+                    <button class="btn custom-button" onclick="checkAnswer(3, 'c')">Pyramid of Menkaure</button>
+                    <button class="btn custom-button" onclick="checkAnswer(3, 'd')">Great Pyramid of Giza</button>
+                  </div>
+                </div>
+              </ul>
+            </div>
+            <div id="question4" >
+              <p>Which famous river flows through Egypt?</p>
+              <ul id="options4" class="list-unstyled">
+                <div class="row">
+                  <div class="col text-left">
+                    <button class="btn custom-button" onclick="checkAnswer(4, 'a')">Nile</button>
+                    <button class="btn custom-button" onclick="checkAnswer(4, 'b')">Amazon</button>
+                  </div>
+                  <div class="col text-right">
+                    <button class="btn custom-button" onclick="checkAnswer(4, 'c')">Mississippi</button>
+                    <button class="btn custom-button" onclick="checkAnswer(4, 'd')">Yangtze</button>
+                  </div>
+                </div>
+              </ul>
+              <p id="result"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const question1Element = document.getElementById('question1');
+    const question2Element = document.getElementById('question2');
+    const question3Element = document.getElementById('question3');
+    const question4Element = document.getElementById('question4');
+    const questions=[1,2,3,4]
+    let currentQuestionNumber=0
+    let i=0
+    let qans=0
+    //função para randomizar o array
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+            }
+        return array;
+        }
+        //randomizar o array
+        const shuffledquestions=shuffleArray(questions)
+        // esconder perguntas e respostas
+        function hideAllQuestions() {
+            question1Element.style.display = 'none';
+            question2Element.style.display = 'none';
+            question3Element.style.display = 'none';
+            question4Element.style.display = 'none';
+        }
+        // aparecer pergunta
+        function showCurrentQuestion() {
+            hideAllQuestions()
+            currentQuestionNumber=shuffledquestions[i++]
+            qans++
+            if (currentQuestionNumber==1){
+                question1Element.style.display = 'block';
+            }else if (currentQuestionNumber== 2) {
+                question2Element.style.display ="block";
+            }else if (currentQuestionNumber== 3) {
+                question3Element.style.display ="block";
+            }else if (currentQuestionNumber== 4) {
+                question4Element.style.display ="block";
+            }
+        }
+        //seleção do numero da pergunta que vai aparecer, que sera sempre por ordem ranzomizada
+        currentQuestionNumber=shuffledquestions[i]
+        showCurrentQuestion()
+        //função de verificação de resposta e tambem de progresso
+        function checkAnswer(currentQuestionNumber, selectedAnswer) {
+          let correctAnswer;
+          if (currentQuestionNumber === 1) {
+            correctAnswer = 'b';
+          } else if (currentQuestionNumber === 2) {
+            correctAnswer = 'd';
+          } else if (currentQuestionNumber === 3) {
+            correctAnswer = 'd';
+          } else if (currentQuestionNumber === 4) {
+            correctAnswer = 'a';
+          }
+            if (selectedAnswer === correctAnswer) {
+                alert('Correct answer!');
+                currentQuestionNumber++;
+                if (qans <= 3) {
+                    showCurrentQuestion();
+                } else {
+                alert('Quiz completed!');
+                hideAllQuestions()
+                }
+              } else {
+                alert('Wrong answer. Try again.');
+            }
+            }
+  </script>
+</body>
+</html>
