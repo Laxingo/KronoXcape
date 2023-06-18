@@ -1,3 +1,16 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #c2b280;
+  font-family: "Viga";
+  margin: 0;
+  height: 100vh;
+  background-image: url("https://www.transparenttextures.com/patterns/dark-exa.png");
+}
+
+
+
 .puzzle {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -27,9 +40,6 @@
     object-fit: fill; 
   }
 
-  .empty {
-    background-color: #ffffff;
-  }
 
   .tile.empty img {
     opacity: 0;
