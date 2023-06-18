@@ -11,13 +11,12 @@
 </head>
 
 <body>
-
   <div class="progress-container mt-5">
     <div class="row justify-content-center">
       <div class="col-6">
         <div class="progress" style="height: 10px;">
-          <div class="progress-bar" role="progressbar" style="width: 75%; height: 100%;"
-            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+          <div class="progress-bar" role="progressbar" style="width: 0%; height: 100%;"
+            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
       </div>
     </div>
@@ -65,18 +64,8 @@
 
   <script type="module" src="../js/views/RoomView.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>    
-  <script>
-    function openPopup() {
-  const width = 400;
-  const height = 400;
-  const left = (window.innerWidth - width) / 2;
-  const top = (window.innerHeight - height) / 2;
-  const options = `width=${width},height=${height},left=${left},top=${top}`;
-  const puzzleWindow = window.open('slidingPuzzle.html', '_blank', options);
-}
+  <script src="../js/SPPopUpHandlerView.js"></script>
 
-document.getElementById('open-popup').addEventListener('click', openPopup);
-</script>
 
 </body>
 
