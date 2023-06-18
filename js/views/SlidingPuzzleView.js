@@ -74,12 +74,18 @@ document.addEventListener('DOMContentLoaded', function() {
         tile.classList.contains('empty') ? 'empty' : tile.classList[1]
       );
       isSolved = JSON.stringify(currentCombination) === JSON.stringify(winningCombination);
-
+        
       if (isSolved) {
         puzzle.classList.add('solved');
-        fadeInEmptyTile(); 
+        fadeInEmptyTile();
+        setTimeout(() => {
+          window.close(); 
+          window.opener.document.getElementById('win-message').style.display = 'block';
+        }, 2000);
+        
       } else {
         puzzle.classList.remove('solved');
+        window.opener.document.getElementById('win-message').style.display = 'none';
       }
     }
 
