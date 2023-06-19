@@ -15,6 +15,7 @@ ul{
     background-color: rgba(246, 213, 143, 0.75) ;
     justify-content: center;
     width: 700px;
+    height: 300px;
     position: relative;
   }
 #sentence{
