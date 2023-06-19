@@ -7,6 +7,10 @@ const question1Element = document.getElementById('question1');
     let currentQuestionNumber = 0;
     let i = 0;
     let correctAnswerStreak = 0;
+    function setresultandcolor(text, color){
+        resultElement.textContent= text;
+        resultElement.style.color= color;
+    }
     // Function to shuffle the array
         function shuffleArray(array) {
             for (let i = array.length - 1; i > 0; i--) {
@@ -61,23 +65,19 @@ const question1Element = document.getElementById('question1');
             correctAnswer = 'a';
           }
             if (selectedAnswer === correctAnswer) {
-                resultElement.style.display='block';
-                resultElement.textContent= 'Correct!';
-                resultElement.style.color= 'green';
+                setresultandcolor("Correct, keep going!","green");
                 console.log('uma pergutna correta')
                 correctAnswerStreak++;
                 if (correctAnswerStreak < 4) {
                     showCurrentQuestion();
-                } else if(correctAnswer===4){
-                resultElement.style.display='block';
-                resultElement.textContent='Quiz completed';
-                resultElement.style.color = "green";
+                } else{
+                setresultandcolor("Congrats you finished the puzzle!","green");
                 console.log('acabou')
                 hideAllQuestions();
                 }
               } else {
                 correctAnswerStreak = 0;
-                resul='wrong'
+                setresultandcolor("Wrong start again","red");
                 hideAllQuestions();
                 restart();
             }
