@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>questions</title>
+  <link rel="stylesheet" href="../css/questions.css">
 </head>
 
 <body>
@@ -14,7 +15,7 @@
         <div class="card">
           <div class="card-body">
             <div id="question1">
-              <p id="sentence">What's the Egyptian God of the sun?</p>
+              <p>What's the Egyptian God of the sun?</p>
               <ul id="options1" class="list-unstyled">
                 <div class="row">
                   <div class="col text-left">
@@ -79,75 +80,6 @@
       </div>
     </div>
   </div>
-  <script>
-    const question1Element = document.getElementById('question1');
-    const question2Element = document.getElementById('question2');
-    const question3Element = document.getElementById('question3');
-    const question4Element = document.getElementById('question4');
-    const questions=[1,2,3,4]
-    let currentQuestionNumber=0
-    let i=0
-    let qans=0
-    //função para randomizar o array
-        function shuffleArray(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
-            }
-        return array;
-        }
-        //randomizar o array
-        const shuffledquestions=shuffleArray(questions)
-        // esconder perguntas e respostas
-        function hideAllQuestions() {
-            question1Element.style.display = 'none';
-            question2Element.style.display = 'none';
-            question3Element.style.display = 'none';
-            question4Element.style.display = 'none';
-        }
-        // aparecer pergunta
-        function showCurrentQuestion() {
-            hideAllQuestions()
-            currentQuestionNumber=shuffledquestions[i++]
-            qans++
-            if (currentQuestionNumber==1){
-                question1Element.style.display = 'block';
-            }else if (currentQuestionNumber== 2) {
-                question2Element.style.display ="block";
-            }else if (currentQuestionNumber== 3) {
-                question3Element.style.display ="block";
-            }else if (currentQuestionNumber== 4) {
-                question4Element.style.display ="block";
-            }
-        }
-        //seleção do numero da pergunta que vai aparecer, que sera sempre por ordem ranzomizada
-        currentQuestionNumber=shuffledquestions[i]
-        showCurrentQuestion()
-        //função de verificação de resposta e tambem de progresso
-        function checkAnswer(currentQuestionNumber, selectedAnswer) {
-          let correctAnswer;
-          if (currentQuestionNumber === 1) {
-            correctAnswer = 'b';
-          } else if (currentQuestionNumber === 2) {
-            correctAnswer = 'd';
-          } else if (currentQuestionNumber === 3) {
-            correctAnswer = 'd';
-          } else if (currentQuestionNumber === 4) {
-            correctAnswer = 'a';
-          }
-            if (selectedAnswer === correctAnswer) {
-                alert('Correct answer!');
-                currentQuestionNumber++;
-                if (qans <= 3) {
-                    showCurrentQuestion();
-                } else {
-                alert('Quiz completed!');
-                hideAllQuestions()
-                }
-              } else {
-                alert('Wrong answer. Try again.');
-            }
-            }
-  </script>
+  <script src="../js/views/questions.js"></script>
 </body>
 </html>
