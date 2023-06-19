@@ -5,6 +5,8 @@
 #bodyquestions{
     display: flex;
     justify-content: center;
+    background-color: #c2b280;
+    background-image: url("https://www.transparenttextures.com/patterns/dark-exa.png");
     }
 ul{
     list-style: none;
@@ -14,13 +16,16 @@ ul{
     border-width: 2px;
     border-radius: 10px;
     background-color: rgba(246, 213, 143, 0.75) ;
-    justify-content: center;
-    width: 800px;
+    width: 900px;
     height: 400px;
     position: relative;
   }
 .custom-card{
-    height: 100px;
+    height: 120px;
+    width: 800px;
+    border-width: 2x;
+    
+    
 }
 #sentence{
     font-size: 25px;
@@ -29,12 +34,12 @@ ul{
 .custom-button{
     background-color: #f6d58f;
     border-color: black;
-    border-width: 2px;
+    border-width: 1px;
     margin: 20px;
     font-size: 20px;
     border-radius: 20px;
-    width: 160px;
-    height: 50px;
+    width: 200px;
+    height: 80px;
 }
 p{
     font-size: 40px;
