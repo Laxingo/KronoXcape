@@ -76,6 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
       isSolved = JSON.stringify(currentCombination) === JSON.stringify(winningCombination);
         
       if (isSolved) {
+        hideButton();
         puzzle.classList.add('solved');
         fadeInEmptyTile();
         setTimeout(() => {
@@ -85,7 +86,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
       } else {
         puzzle.classList.remove('solved');
-        window.opener.document.getElementById('win-message').style.display = 'none';
       }
     }
 
@@ -107,3 +107,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     initializePuzzle();
   });
+  function hideButton() {
+    var map = document.getElementById("myMap");
+    map.style.display = "none";
+    console.log("OLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+  }

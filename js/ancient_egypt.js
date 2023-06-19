@@ -40,3 +40,8 @@ function formatTime(minutes, seconds) {
     String(minutes).padStart(2, "0") + ":" + String(seconds).padStart(2, "0")
   );
 }
+function hideButton() {
+  var map = document.getElementById("myMap");
+  map.style.display = "none";
+  console.log("OLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+}
