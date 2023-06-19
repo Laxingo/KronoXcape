@@ -6,6 +6,8 @@
     display: flex;
     justify-content: center;
     background-color: #c2b280;
+    align-items: center;
+    min-height: 100vh;
     background-image: url("https://www.transparenttextures.com/patterns/dark-exa.png");
     }
 ul{
@@ -17,7 +19,7 @@ ul{
     border-radius: 10px;
     background-color: rgba(246, 213, 143, 0.75) ;
     width: 900px;
-    height: 400px;
+    height: 450px;
     position: relative;
   }
 .custom-card{

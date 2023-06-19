@@ -74,6 +74,7 @@ const question1Element = document.getElementById('question1');
                 setresultandcolor("Congrats you finished the puzzle!","green");
                 console.log('acabou')
                 hideAllQuestions();
+                
                 }
               } else {
                 correctAnswerStreak = 0;
