@@ -3,11 +3,19 @@
     src: url("../fonts/Viga-Regular.ttf");
   }
 #bodyblanks{
-    display: flex;
-    justify-content: center;
-    background-color: #c2b280;
-    background-image: url("https://www.transparenttextures.com/patterns/dark-exa.png");
+    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #c2b280;
+  background-image: url("https://www.transparenttextures.com/patterns/dark-exa.png");
+    
     }
+.container{
+  align-items: center;
+  display: flex;
+}
 ul{
     list-style: none;
   }
