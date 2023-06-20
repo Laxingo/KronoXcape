@@ -34,7 +34,7 @@ export function isLogged() {
 }
 
 export function getUserLogged() {
-  const loggedUser = sessionStorage.getItem("loggedUser");
+  return JSON.parse(sessionStorage.getItem("loggedUser"));
 }
 
 export function getUsers() {

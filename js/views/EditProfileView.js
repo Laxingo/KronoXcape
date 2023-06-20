@@ -1,41 +1,52 @@
-// Wait for the HTML document to be fully loaded
-document.addEventListener("DOMContentLoaded", function() {
-  // Get the timer element
-  var timerElement = document.getElementById("timer-text");
+import * as User from "../models/UserModel.js";
 
-  // Set the initial time to 5 minutes (300 seconds)
-  var timeInSeconds = 300;
+function EditProfileView() {
+  User.init();
 
-  // Update the timer text with the initial time
-  timerElement.textContent = formatTime(timeInSeconds);
+  // Get the logged-in user from sessionStorage
+  const loggedUserString = User.getUserLogged();
+  const loggedUser = JSON.parse(loggedUserString);
 
-  // Create an interval that updates the timer every second
-  var countdownInterval = setInterval(function() {
-    // Decrease the remaining time by 1 second
-    timeInSeconds--;
+  // Update user data in localStorage with information from form controls
+  const saveButton = document.getElementById("saveButton");
+  saveButton.addEventListener("click", () => {
+    const usernameInput = document.getElementById("username");
+    const passwordInput = document.getElementById("password");
+    const confirmPasswordInput = document.getElementById("confirmPassword");
 
-    // Update the timer text with the new remaining time
-    timerElement.textContent = formatTime(timeInSeconds);
+    const newUsername = usernameInput.value.trim();
+    const newPassword = passwordInput.value.trim();
+    const confirmNewPassword = confirmPasswordInput.value.trim();
 
-    // Check if the timer has reached 0
-    if (timeInSeconds === 0) {
-      // Stop the interval
-      clearInterval(countdownInterval);
-
-      // Perform any actions when the timer reaches 0
-      alert("Time's up!");
+    // Validate the new username and password
+    if (newUsername === "" || newPassword === "" || newPassword !== confirmNewPassword) {
+      // Display an error message or handle the validation as needed
+      return;
     }
-  }, 1000);
 
-  // Function to format the time in MM:SS format
-  function formatTime(timeInSeconds) {
-    var minutes = Math.floor(timeInSeconds / 60);
-    var seconds = timeInSeconds % 60;
-    return pad(minutes) + ":" + pad(seconds);
-  }
+    // Get the users from localStorage
+    const usersString = localStorage.getItem("users");
+    const users = JSON.parse(usersString) || [];
 
-  // Function to pad single-digit numbers with leading zeros
-  function pad(number) {
-    return (number < 10 ? "0" : "") + number;
-  }
-});
+    console.log("Users from localStorage:", users);
+
+    if (users.length > 0) {
+      // Update the user's data in localStorage
+      users[0].username = newUsername;
+      users[0].password = newPassword;
+      localStorage.setItem("users", JSON.stringify(users));
+
+      // Update the logged-in user's data in sessionStorage
+      loggedUser.username = newUsername;
+      loggedUser.password = newPassword;
+      sessionStorage.setItem("loggedUser", JSON.stringify(loggedUser));
+
+      console.log("User data updated successfully!");
+    } else {
+      console.log("No users found in the users array in localStorage.");
+    }
+  });
+}
+
+EditProfileView();
+
