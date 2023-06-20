@@ -14,29 +14,22 @@
           <div class="col-6">
             <div class="image-container d-flex align-items-center justify-content-center">
               <div class="border border-warning rounded">
-                <img class="wall" src="../Images/rooms/wall_Insert_direita.png" width="500px">
+                <img id="wall" src="../Images//rooms/wall_Insert_direita.png" width="500px" usemap="#image-map">
+                <map name="image-map">
+                    <area target="" alt="insert" title="insert" href="" coords="213, 396, 305, 492" onclick="changeImage(event, '../Images/rooms/wall_inserted.png')" shape="rect">
+                </map>
               </div>
             </div>
           </div>
         </div>
     </div>
-
-    <div class="row justify-content-center mt-4">
-        <div class="col-12">
-          <div class="d-flex justify-content-center">
-            <div id="inventory-bar">
-              <div class="inventory-slot" draggable="true"><img class="pyramid" src="../Images/icons/pyramid.png"></div>
-              <div class="inventory-slot" draggable="true"></div>
-              <div class="inventory-slot" draggable="true"></div>
-              <div class="inventory-slot" draggable="true"></div>
-              <div class="inventory-slot" draggable="true"></div>
-            </div>
-          </div>
-        </div>
-     </div>
 </body>
 
 <script>
-    function
+function changeImage(event, newImageUrl) {
+    event.preventDefault(); // Prevent default behavior of the click event
+    const image = document.getElementById('wall');
+    image.src = newImageUrl;
+}
 </script>
 </html>
