@@ -4,6 +4,7 @@ const question1Element = document.getElementById('question1');
     const question4Element = document.getElementById('question4');
     const questions = [1, 2, 3, 4];
     var resultElement = document.getElementById("result");
+    var imgInElement = document.getElementById("pyramidimg")
     let currentQuestionNumber = 0;
     let i = 0;
     let correctAnswerStreak = 0;

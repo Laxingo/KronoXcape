@@ -19,14 +19,15 @@ var sentenceElement = document.getElementById("sentence");
 var options1Element = document.getElementById("options1");
 var options2Element = document.getElementById("options2");
 var options3Element = document.getElementById("options3");
-var buttonElement = document.getElementById("restart")
-var fillInElement = document.getElementById("fill-in")
+var buttonElement = document.getElementById("restart");
+var fillInElement = document.getElementById("fill-in");
+var imgElement = document.getElementById("pyramidimg");
 
 
 function doSomethingAfterDelay(seconds, callback) {
   setTimeout(() => {
     window.close(); 
-  }, 3000);
+  }, 5000);
 }
 
 function hide(){
@@ -64,10 +65,11 @@ function checkAnswer(blankNumber, selectedOption) {
           options3Element.style.display = "block";
         }
         if (currentBlankNumber > Object.keys(blanks).length) {
-          resultElement.textContent = "Congratulations! You filled all the blanks correctly.";
-          resultElement.style.color = "green"
-          hide()
-          doSomethingAfterDelay()
+          resultElement.textContent = "Congratulations! You filled all the blanks correctly and you got a pyramid, I wonder what you can use it for.";
+          resultElement.style.color = "green";
+          hide();
+          doSomethingAfterDelay();
+          imgElement.style.display="block";
         }
       } else {
         currentBlankNumber=1;
