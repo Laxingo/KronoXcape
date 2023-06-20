@@ -39,7 +39,7 @@
           <div class="border border-warning rounded">
             
               <map name="image-map">
-                <area target="_self" alt="porta" title="porta" id="open-popup" coords="322,264,409,254,410,122,400,100,385,87,360,86,350,90,333,100,324,122" shape="poly">
+                <area target="_self" alt="porta" id="open-popup" coords="322,264,409,254,410,122,400,100,385,87,360,86,350,90,333,100,324,122" shape="poly">
                 <area target="_self" alt="piramide_esquerda" title="piramide_esquerda" href="" coords="147, 246, 166, 248, 168, 220, 157, 193, 144, 219" shape="poly">
                 <area target="_self" alt="piramide_direita" title="piramide_direita" href="" coords="543, 253, 562, 254, 564, 227, 551, 201, 540, 227" shape="poly">
                 <area target="_self" alt="quadrado_esquerdo" title="quadrado_esquerdo" href="" coords="264, 204, 280, 188" shape="rect">
@@ -55,17 +55,16 @@
     <div class="row justify-content-center mt-4">
       <div class="col-12">
         <div class="d-flex justify-content-center">
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
+          <div id="inventory-bar">
+            <div class="inventory-slot" draggable="true"><img class="pyramid" src="../Images/icons/pyramid.png"></div>
+            <div class="inventory-slot" draggable="true"></div>
+            <div class="inventory-slot" draggable="true"></div>
+            <div class="inventory-slot" draggable="true"></div>
+            <div class="inventory-slot" draggable="true"></div>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- End of squares -->
-
-  </div>
+   </div>
 
   <script type="module" src="../js/views/RoomView.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>    

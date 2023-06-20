@@ -26,13 +26,25 @@ body {
   margin-top: 50px;
 }
 
-.square {
-  width: 100px;
-  height: 100px;
-  background-color: rgb(255, 255, 255, 0.5);
-  margin: 5px;
-  border-radius: 10px;
+#inventory-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px; /* Adjust the width as needed */
+  height: 120px; /* Adjust the height as needed */
+  background-color: #c2b280; /* Adjust the background color as needed */
+  border: 2px solid #000; /* Adjust the border color and size as needed */
+  border-radius: 5px;
 }
 
-
-
+.inventory-slot {
+  width: 100px; /* Adjust the slot width as needed */
+  height: 100px; /* Adjust the slot height as needed */
+  background-color: rgb(255, 255, 255, 0.5); /* Adjust the slot background color as needed */
+  margin: 0 10px; /* Adjust the slot margin as needed */
+  align-items: center;
+  justify-content: center;
+}
+.pyramid{
+  margin: 10px;
+}
