@@ -4,7 +4,7 @@ const question1Element = document.getElementById('question1');
     const question4Element = document.getElementById('question4');
     const questions = [1, 2, 3, 4];
     var resultElement = document.getElementById("result");
-    var imgInElement = document.getElementById("pyramidimg")
+    var imgElement = document.getElementById("pyramidimg");
     let currentQuestionNumber = 0;
     let i = 0;
     let correctAnswerStreak = 0;
@@ -72,11 +72,12 @@ const question1Element = document.getElementById('question1');
                 if (correctAnswerStreak < 4) {
                     showCurrentQuestion();
                 } else{
-                setresultandcolor("Congrats you finished the puzzle!","green");
+                imgElement.style.display="block";
+                setresultandcolor("Congrats you finished the puzzle and you got a pyramid, I wonder what you can use it for.","green");
                 hideAllQuestions();
                 setTimeout(() => {
                   window.close(); 
-                }, 2000);
+                }, 6000);
                 }
               } else {
                 correctAnswerStreak = 0;

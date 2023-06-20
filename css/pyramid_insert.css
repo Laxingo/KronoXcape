@@ -1,0 +1,18 @@
+@font-face {
+    font-family: "Viga";
+    src: url("../fonts/Viga-Regular.ttf");
+}
+  
+body {
+    display: flex;
+    justify-content: center;
+    background-color: #c2b280;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("https://www.transparenttextures.com/patterns/dark-exa.png");
+}
+#wall{
+    align-items: center;
+    object-position: center;
+    justify-content: center;
+}
