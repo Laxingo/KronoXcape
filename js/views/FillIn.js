@@ -21,13 +21,14 @@ var options2Element = document.getElementById("options2");
 var options3Element = document.getElementById("options3");
 var buttonElement = document.getElementById("restart")
 var fillInElement = document.getElementById("fill-in")
+
+
 function doSomethingAfterDelay(seconds, callback) {
-    var milliseconds = seconds * 1000;
-    setTimeout(callback, milliseconds);
+  setTimeout(() => {
+    window.close(); 
+  }, 2000);
 }
-function endgame(){
-    fillInElement.style.display="none";
-}
+
 function hide(){
         options1Element.style.display = "none";
     options2Element.style.display = "none";
@@ -67,7 +68,7 @@ function checkAnswer(blankNumber, selectedOption) {
           resultElement.textContent = "Congratulations! You filled all the blanks correctly.";
           resultElement.style.color = "green"
           hide()
-          doSomethingAfterDelay(5,endgame)
+          doSomethingAfterDelay()
         }
       } else {
         currentBlankNumber=1;

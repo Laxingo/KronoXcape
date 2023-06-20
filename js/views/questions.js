@@ -72,9 +72,10 @@ const question1Element = document.getElementById('question1');
                     showCurrentQuestion();
                 } else{
                 setresultandcolor("Congrats you finished the puzzle!","green");
-                console.log('acabou')
                 hideAllQuestions();
-                
+                setTimeout(() => {
+                  window.close(); 
+                }, 2000);
                 }
               } else {
                 correctAnswerStreak = 0;
