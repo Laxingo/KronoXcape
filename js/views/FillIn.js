@@ -26,14 +26,13 @@ var fillInElement = document.getElementById("fill-in")
 function doSomethingAfterDelay(seconds, callback) {
   setTimeout(() => {
     window.close(); 
-  }, 2000);
+  }, 3000);
 }
 
 function hide(){
-        options1Element.style.display = "none";
+    options1Element.style.display = "none";
     options2Element.style.display = "none";
     options3Element.style.display = "none";
-    sentenceElement.style.display = "none";
 }
 function restart(){
     currentBlankNumber=1;

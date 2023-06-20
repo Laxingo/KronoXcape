@@ -2,7 +2,7 @@
     font-family: "Viga";
     src: url("../fonts/Viga-Regular.ttf");
   }
-#bodyblanks{
+body{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,12 +19,13 @@ ul{
     list-style: none;
   }
   .card{
+    display: flex;
     border-color: black;
     border-width: 2px;
     border-radius: 10px;
     background-color: rgba(246, 213, 143, 0.75) ;
     justify-content: center;
-    width: 800px;
+    width: 650px;
     height: 300px;
     position: relative;
   }
@@ -32,6 +33,7 @@ ul{
     font-size: 30px;
 }
 .custom-button{
+  display: flex;
     background-color: #f6d58f;
     border-color: black;
     border-width: 2px;

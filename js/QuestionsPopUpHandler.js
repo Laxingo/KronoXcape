@@ -1,5 +1,5 @@
 function openQuestionsPopup() {
-    const width = 400;
+    const width = 700;
     const height = 400;
     const left = (window.innerWidth - width) / 2;
     const top = (window.innerHeight - height) / 2;

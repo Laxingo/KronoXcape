@@ -5,7 +5,7 @@
   
 
   
-  #bodyquestions {
+ body {
     display: flex;
     justify-content: center;
     background-color: #c2b280;
@@ -19,24 +19,27 @@
   }
   
   .card {
+    display: flex;
     border-color: black;
     border-width: 0.22vw;
-    border-radius: 1.11vw;
+    border-radius: 10px;
     background-color: rgba(246, 213, 143, 0.75);
-    width: 77.78vw;
-    height: 41.67vh;
+    width: 600px;
+    height: 300px;
     position: relative;
   }
   
   .custom-card {
-    height: 10vh;
-    width: 70vh;
+    display: flex;
+    height: 70px;
+    width: 500px;
     border-width: 0.22vw;
   }
   
-  #sentence {
-    font-size: 1.67vw;
+  p {
+    font-size: 20px;
     position: relative;
+    margin: 2px;
   }
   
   .custom-button {
@@ -44,14 +47,10 @@
     border-color: black;
     border-width: 0.11vw;
     margin: 2.22vw;
-    font-size: 10px;
+    font-size: 15px;
     border-radius: 2.22vw;
     width: 22.22vw;
     height: 8.89vh;
-  }
-  
-  p {
-    font-size: 15px;
   }
   
   #result {
