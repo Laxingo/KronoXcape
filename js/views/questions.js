@@ -8,6 +8,7 @@ const question1Element = document.getElementById('question1');
     let currentQuestionNumber = 0;
     let i = 0;
     let correctAnswerStreak = 0;
+    var questionsdone=0;
     function setresultandcolor(text, color){
         resultElement.textContent= text;
         resultElement.style.color= color;
@@ -72,6 +73,7 @@ const question1Element = document.getElementById('question1');
                 if (correctAnswerStreak < 4) {
                     showCurrentQuestion();
                 } else{
+                questionsdone=1;
                 imgElement.style.display="block";
                 setresultandcolor("Congrats you finished the puzzle and you got a pyramid, I wonder what you can use it for.","green");
                 hideAllQuestions();
