@@ -2,51 +2,60 @@
     font-family: "Viga";
     src: url("../fonts/Viga-Regular.ttf");
   }
-#bodyquestions{
+  
+
+  
+  #bodyquestions {
     display: flex;
     justify-content: center;
     background-color: #c2b280;
     align-items: center;
     min-height: 100vh;
     background-image: url("https://www.transparenttextures.com/patterns/dark-exa.png");
-    }
-ul{
+  }
+  
+  ul {
     list-style: none;
   }
-.card{
+  
+  .card {
     border-color: black;
-    border-width: 2px;
-    border-radius: 10px;
-    background-color: rgba(246, 213, 143, 0.75) ;
-    width: 900px;
-    height: 450px;
+    border-width: 0.22vw;
+    border-radius: 1.11vw;
+    background-color: rgba(246, 213, 143, 0.75);
+    width: 77.78vw;
+    height: 41.67vh;
     position: relative;
   }
-.custom-card{
-    height: 120px;
-    width: 800px;
-    border-width: 2x;
-    
-    
-}
-#sentence{
-    font-size: 25px;
+  
+  .custom-card {
+    height: 10vh;
+    width: 70vh;
+    border-width: 0.22vw;
+  }
+  
+  #sentence {
+    font-size: 1.67vw;
     position: relative;
-}
-.custom-button{
+  }
+  
+  .custom-button {
     background-color: #f6d58f;
     border-color: black;
-    border-width: 1px;
-    margin: 20px;
+    border-width: 0.11vw;
+    margin: 2.22vw;
+    font-size: 10px;
+    border-radius: 2.22vw;
+    width: 22.22vw;
+    height: 8.89vh;
+  }
+  
+  p {
+    font-size: 15px;
+  }
+  
+  #result {
     font-size: 20px;
-    border-radius: 20px;
-    width: 200px;
-    height: 80px;
-}
-p{
-    font-size: 40px;
-}
-#result{
-    font-size: 30px;
-    margin-left: 20px;
-}
+    margin-left: 2.22vw;
+    align-items: center;
+  }
