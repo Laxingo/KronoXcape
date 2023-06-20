@@ -1,7 +1,8 @@
 var Pyramid1Element=document.getElementById("pyramid1");
 var Pyramid2Element=document.getElementById("pyramid2");
 function pyramidshow(){
-if (pyramids>0){
+    console.log("pyramidsshow running!!")
+if (1=pyramids){
     Pyramid1Element.style.display="block"
 }
 else if(pyramids==2){

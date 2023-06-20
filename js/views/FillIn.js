@@ -22,6 +22,9 @@ var options3Element = document.getElementById("options3");
 var buttonElement = document.getElementById("restart");
 var fillInElement = document.getElementById("fill-in");
 var imgElement = document.getElementById("pyramidimg");
+var Pyramid1Element=document.getElementById("pyramid1");
+var Pyramid2Element=document.getElementById("pyramid2");
+var pyramids;
 
 
 function doSomethingAfterDelay(seconds, callback) {
@@ -67,6 +70,7 @@ function checkAnswer(blankNumber, selectedOption) {
         if (currentBlankNumber > Object.keys(blanks).length) {
           resultElement.textContent = "Congratulations! You filled all the blanks correctly and you got a pyramid, I wonder what you can use it for.";
           resultElement.style.color = "green";
+          pyramids++;
           hide();
           doSomethingAfterDelay();
           imgElement.style.display="block";
