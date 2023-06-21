@@ -70,7 +70,7 @@ function openPopup() {
         // Redirect to index.html after the alert is closed
         setTimeout(() => {
           window.location.replace('../html/index.html');
-        }, 2500); // Adjust the delay (in milliseconds) as needed
+        }, 3500); // Adjust the delay (in milliseconds) as needed
       }
     });
   };
@@ -140,7 +140,5 @@ document.getElementById('wall-popup2').addEventListener('click', function() {
     var newWidth = currentWidth + 5;
     progressBar.style.width = newWidth + '%';
     progressBar.setAttribute('aria-valuenow', newWidth);
-
-    document.getElementById('open-popup').addEventListener('click', openPopup);
   }
 });
