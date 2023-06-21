@@ -11,7 +11,7 @@ function openFillInPopup() {
     setTimeout(() => {
       var progressBar = document.querySelector('.progress-bar');
       var currentWidth = parseInt(progressBar.style.width, 10);
-      var newWidth = currentWidth + 20;
+      var newWidth = currentWidth + 25;
       progressBar.style.width = newWidth + '%';
       progressBar.setAttribute('aria-valuenow', newWidth); 
 
@@ -36,7 +36,7 @@ function openQuestionsPopup() {
     setTimeout(() => {
       var progressBar = document.querySelector('.progress-bar');
       var currentWidth = parseInt(progressBar.style.width, 10);
-      var newWidth = currentWidth + 20; 
+      var newWidth = currentWidth + 25; 
       progressBar.style.width = newWidth + '%';
       progressBar.setAttribute('aria-valuenow', newWidth); 
 
