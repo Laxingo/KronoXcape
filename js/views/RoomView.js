@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var secondsDisplay = document.getElementById("seconds");
   var colonDisplay = document.getElementById("colon");
 
-  var totalSeconds = 7 * 60; // 7 minutes in seconds
+  var totalSeconds = 7 * 60;
 
   function updateTime() {
     var minutes = Math.floor(totalSeconds / 60);
@@ -14,9 +14,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (totalSeconds <= 0) {
       clearInterval(timer);
-      // Timer finished, do something here
-      // For example, display a message or redirect to another page
-      console.log("Timer finished!");
+      alert("Time's up!");
+      window.location.replace("../html/index.html");
     } else {
       if (minutes <= 5) {
         if (seconds % 2 === 0) {
@@ -43,4 +42,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
   var timer = setInterval(updateTime, 1000);
 });
+
 
